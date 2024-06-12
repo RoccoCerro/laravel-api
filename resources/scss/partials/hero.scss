@@ -1,0 +1,50 @@
+.my-hero{
+
+  background-image: url('/img/hero-5.jpg');
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+
+  .img-hero{
+    width: 100%;
+  }
+
+  .my-row-projects{
+    position: absolute;
+    bottom: 150px;
+    left: 50%;
+    transform: translateX(-50%);
+
+      .my-card{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex-wrap: nowrap; 
+        align-items: center;
+        gap: 15px;
+        cursor: pointer;
+      }
+
+      .my-card-header{
+        height: 50px;
+        width: 50px;
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+      }
+
+      .my-card-header.first{
+        background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(255,255,255,1) 100%);      }
+
+      .my-card-header.second{
+        background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+      }
+
+      .my-card-header.third{
+        background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+      }
+
+      .my-card-header.fourth{
+        background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);      }
+  }
+}
