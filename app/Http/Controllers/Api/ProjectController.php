@@ -13,19 +13,19 @@ class ProjectController extends Controller
 
         $per_page = $request->perPage ?? 10;
 
-        $result = Project::with('technologies', 'type')->paginate($per_page);
+        $results = Project::with('technologies', 'type')->paginate($per_page);
         
         return response()->json([
-            'results' => $result
+            'results' => $results
         ]);
 
     }
 
     public function show(Request $request){
-        $results = Project::where('slug', $request->slug)->get();
+        $result = Project::where('slug', $request->slug)->first();
 
         return response()->json([
-            'results' => $results
+            'result' => $result
         ]);
     }
 }
