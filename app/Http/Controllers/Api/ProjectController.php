@@ -20,4 +20,12 @@ class ProjectController extends Controller
         ]);
 
     }
+
+    public function show(Request $request){
+        $results = Project::where('slug', $request->slug)->get();
+
+        return response()->json([
+            'results' => $results
+        ]);
+    }
 }
