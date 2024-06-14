@@ -21,11 +21,12 @@ class ProjectController extends Controller
 
     }
 
-    public function show(Request $request){
-        $result = Project::where('slug', $request->slug)->first();
+    public function show(Project $project){
+
+        $project->load('technologies', 'type');
 
         return response()->json([
-            'result' => $result
+            'project' => $project
         ]);
     }
 }
